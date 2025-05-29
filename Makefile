@@ -50,7 +50,6 @@ clean:
 git:
 	@git add .
 	@git status
-	@read -p "Do you want to Commit&Push (Y/N): " ans; case "$$ans" in [Yy]) ;; *) exit 1;; esac
 	@echo "$(GREEN)Committing Changes$(NC)"
 	@git commit -m "Updated $(shell date)" > /dev/null 2>&1
 	@echo "$(GREEN)Exit Code: $$?$(NC)"
