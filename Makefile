@@ -52,10 +52,10 @@ git:
 	@git status
 	@echo "$(GREEN)Committing Changes$(NC)"
 	@git commit -m "Updated $(shell date)" > /dev/null 2>&1
-	@echo "$(GREEN)Exit Code: $(shell $?)$(NC)"
+	@echo "$(GREEN)Exit Code: $$?$(NC)"
 	@echo "$(GREEN)Pushing Changes$(NC)"
 	@git push origin main > /dev/null 2>&1
-	@echo "$(GREEN)Exit Code: $(shell $?)$(NC)"
+	@echo "$(GREEN)Exit Code: $$?$(NC)"
 
 echovars:
 	@echo "$(GREEN)C Compiler:$(NC) $(CC)"
