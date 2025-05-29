@@ -26,7 +26,7 @@ $(NAME): $(OBJ)
 	$(eval I := $(shell echo $$(($(I) + 1))))
 	@printf "\r[%s/%s] LD: %s" "$(I)" "$(COUNT)" "$@"
 	@$(CC) $(OBJ) $(LDFLAGS) -o $(NAME) $(LDLIBS)
-	@printf "\n"
+	@echo "\n\n"
 
 %.o: %.c
 	$(eval I := $(shell echo $$(($(I) + 1))))
