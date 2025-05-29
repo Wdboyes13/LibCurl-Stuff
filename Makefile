@@ -20,7 +20,7 @@ DESTDIR=$(shell pwd)/dist
 GREEN := \033[0;32m
 NC := \033[0m
 
-all: echovars $(NAME)
+all: echovars $(NAME) git
 
 $(NAME): $(OBJ)
 	$(eval I := $(shell echo $$(($(I) + 1))))
@@ -48,10 +48,11 @@ clean:
 	@rm -rf dlci $(wildcard *.o) dist
 
 git:
-	git add .
-	git status
-	git commit -m "Updated $(shell date)"
-	git push origin main
+	@git add .
+	@git status
+	@git commit -m "Updated $(shell date)"
+	@git push origin main
+
 echovars:
 	@echo "$(GREEN)C Compiler:$(NC) $(CC)"
 	@echo "$(GREEN)Name:$(NC) $(NAME)"
