@@ -68,4 +68,4 @@ echovars:
 	@echo "$(GREEN)Destination Directory:$(NC) $(DESTDIR)"
 	@echo "\n\n"
 
-.PHONY: clean install all test
+.PHONY: clean install all test git echovars
