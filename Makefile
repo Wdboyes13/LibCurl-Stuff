@@ -47,7 +47,7 @@ clean:
 	@echo "RM: dlci $(wildcard *.o dist)"
 	@rm -rf dlci $(wildcard *.o) dist
 
-git:
+git: clean
 	@git add .
 	@git status
 	@echo "$(GREEN)Committing Changes$(NC)"
