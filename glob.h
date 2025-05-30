@@ -8,5 +8,6 @@ struct furl {
 
 void get_furl_input(struct furl *out);
 void dl(const char *url, const char *filename);
+void gnumode();
 
 #endif
