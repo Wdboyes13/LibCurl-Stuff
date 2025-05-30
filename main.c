@@ -24,8 +24,8 @@ int main(){
     printf("URL: %s\n", input.url);
     printf("Filename: %s\n", input.filename);
 
-    if (input.url == NULL || strcmp(input.url, "") == 1|| strcmp(input.url, " ") == 1) {
-        snprintf(input.url, sizeof(input.url), "%s-downloaded", input.url);
+    if (input.url == NULL || strcmp(input.url, "") < 0 || strcmp(input.url, " ") < 0) {
+        strcpy(input.url, "default-downloaded");
     }
 
     dl(input.url, input.filename);
