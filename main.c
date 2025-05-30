@@ -16,8 +16,8 @@ void* key_checker(void* arg) {
 }
 
 int main(){
-    pthread_t key_thread;
-    pthread_create(&key_thread, NULL, key_checker, NULL);
+    // pthread_t key_thread;
+    // pthread_create(&key_thread, NULL, key_checker, NULL);
     struct furl input;
     get_furl_input(&input);
 
