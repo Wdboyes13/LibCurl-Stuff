@@ -1,5 +1,5 @@
 #include <curl.h>
-
+#include <stdlib.h>
 #include "glob.h"
 
 size_t write_file (void *ptr, size_t size, size_t nmemb, FILE *stream){
@@ -16,8 +16,9 @@ void dl(const char *url, const char *fname){
     if (curl) {
         fp = fopen(fname, "wb");
         if (!fp) {
-            const char *FOerr = "Fatal Error: Failed to open %s", ofname;
+            const char *FOerr = "Fatal Error: Failed to open ", ofname;
             perror(FOerr);
+            exit(1);
         }
         curl_easy_setopt(curl, CURLOPT_URL, url);
         curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_file);
